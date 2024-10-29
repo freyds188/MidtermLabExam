@@ -1,0 +1,147 @@
+/* App.css */
+body {
+  background-color: #f5f5f5; /* Light background for the body */
+  color: #333333; /* Darker text for better contrast */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Heading Styles */
+h1 {
+  color: #222222; /* Darker color for headings */
+  margin-bottom: 20px; /* Space below heading */
+  font-size: 2.8rem; /* Larger font size for headings */
+  font-weight: bold; /* Bold font weight for emphasis */
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Subtle shadow for depth */
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 30px; /* Increased padding around the dashboard */
+  text-align: center; /* Center align text in the dashboard */
+}
+
+/* Card Styles */
+.card {
+  background-color: #ffffff; /* White card background */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-8px); /* Lift card on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 5px; /* Rounded corners */
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none; /* Remove default border */
+  padding: 12px 24px; /* Increase padding */
+  font-size: 1.1rem; /* Button font size */
+  color: #ffffff; /* White text for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Input and Form Styles */
+input,
+textarea {
+  background-color: #ffffff; /* White background for inputs */
+  color: #333333; /* Dark text for inputs */
+  border: 1px solid #ccc; /* Light border color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 12px; /* Increased padding inside inputs */
+  width: 100%; /* Full width */
+  margin-bottom: 15px; /* Space between inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for border color */
+}
+
+/* Input Focus Effect */
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+}
+
+/* List Styles */
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+li {
+  background-color: #ffffff; /* White background for list items */
+  margin: 15px 0; /* Space between items */
+  padding: 15px; /* Padding inside items */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+}
+
+/* List Item Hover Effect */
+li:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Global Links */
+a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition for color change */
+}
+
+a:hover {
+  color: #0056b3; /* Darker shade on hover */
+  text-decoration: underline; /* Underline on hover */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5); /* Subtle shadow on hover for depth */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #ffffff; /* White background for footer */
+  color: #333333; /* Dark text for footer */
+  padding: 20px; /* Padding inside footer */
+  text-align: center; /* Center align text in footer */
+  position: fixed; /* Fixed footer */
+  bottom: 0; /* Align to bottom */
+  width: 100%; /* Full width */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Light shadow above footer */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .dashboard {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .btn {
+    padding: 10px 15px; /* Adjust button padding for smaller screens */
+    font-size: 1rem; /* Adjust button font size */
+  }
+
+  input,
+  textarea {
+    padding: 10px; /* Adjust input padding */
+  }
+
+  li {
+    margin: 10px 0; /* Adjust margin for list items */
+  }
+}
