@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchBooks, deleteBook } from '../api'; 
+import { fetchBooks, deleteBook } from '../api';
 
 function BookList() {
     const [books, setBooks] = useState([]);
@@ -21,28 +21,47 @@ function BookList() {
     }, []);
 
     const handleDelete = async (id) => {
+        // Optimistically remove the book from the state
+        const updatedBooks = books.filter(book => book.id !== id);
+        setBooks(updatedBooks);
+
         try {
             await deleteBook(id); // Call the deleteBook API function
-            setBooks((prevBooks) => prevBooks.filter(book => book.id !== id)); // Remove the deleted book from the state
         } catch (error) {
             console.error('Error deleting book:', error);
-            setError('Failed to delete book. Please try again.');
+            setError('Failed to delete book. Please try again.'); // Show error message
+            // Revert the state back if deletion fails
+            setBooks(books);
         }
     };
 
     return (
-        <div>
+        <div className="dashboard">
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            <ul>
+            <div className="book-list">
                 {books.map((book) => (
-                    <li key={book.id}>
-                        <Link to={`/view/${book.id}`}>{book.title}</Link> - {book.author}
-                        <Link to={`/edit/${book.id}`} style={{ marginLeft: '10px' }}>Edit</Link>
-                        <button onClick={() => handleDelete(book.id)} style={{ marginLeft: '10px' }}>Delete</button>
-                    </li>
+                    <div key={book.id} className="book-card-link">
+                        <Link to={`/view/${book.id}`} className="book-card">
+                            <h2>{book.title}</h2>
+                            <p>{book.author}</p>
+                        </Link>
+                        <div className="actions">
+                            <Link to={`/edit/${book.id}`}>
+                                <button className="edit-button">Edit</button>
+                            </Link>
+                            <button className="delete-button" onClick={(e) => {
+                                e.stopPropagation(); // Prevent the link click event
+                                handleDelete(book.id);
+                            }}>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
                 ))}
-            </ul>
-            <Link to="/add">Add New Book</Link>
+            </div>
+            <Link to="/add">
+                <button className="add-book-button">Add Book</button>
+            </Link>
         </div>
     );
 }

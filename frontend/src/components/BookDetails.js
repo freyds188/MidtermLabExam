@@ -1,10 +1,9 @@
-// src/components/BookDetails.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchBookById } from '../api'; // Import the API function
+import { useParams, Link } from 'react-router-dom';
+import { fetchBookById } from '../api';
 
 function BookDetails() {
-    const { id } = useParams(); // Get the book ID from the URL parameters
+    const { id } = useParams();
     const [book, setBook] = useState(null);
     const [error, setError] = useState(null);
 
@@ -27,12 +26,17 @@ function BookDetails() {
     }
 
     return book ? (
-        <div>
-            <h3>{book.title}</h3>
-            <p><strong>Author:</strong> {book.author}</p>
-            <p><strong>Published Year:</strong> {book.published_year}</p>
-            <p><strong>Genre:</strong> {book.genre}</p>
-            <p><strong>Description:</strong> {book.description}</p>
+        <div className="book-details">
+            <Link to="/"> 
+                <button className="back-button">Back to Dashboard</button>
+            </Link>
+            <div className="book-details-card">
+                <h2>{book.title}</h2>
+                <p><strong>Author:</strong> {book.author}</p>
+                <p><strong>Published Year:</strong> {book.published_year}</p>
+                <p><strong>Genre:</strong> {book.genre}</p>
+                <p><strong>Description:</strong> {book.description}</p>
+            </div>
         </div>
     ) : (
         <p>Loading book details...</p>

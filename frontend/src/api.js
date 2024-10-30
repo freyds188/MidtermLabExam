@@ -1,4 +1,3 @@
-// src/api.js
 const API_BASE_URL = 'http://127.0.0.1:8000/api/books';
 
 export const fetchBooks = async () => {
@@ -49,8 +48,9 @@ export const deleteBook = async (id) => {
     const response = await fetch(`${API_BASE_URL}/${id}`, {
         method: 'DELETE',
     });
+    
     if (!response.ok) {
         throw new Error('Failed to delete book');
     }
-    return await response.json();
+    return;
 };

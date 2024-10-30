@@ -13,7 +13,7 @@ function EditBook() {
 
     return (
         <Container className="mt-4">
-            <Card>
+            <Card className="text-center">
                 <Card.Body>
                     <Card.Title>Edit Book</Card.Title>
                     <BookForm onSubmit={handleFormSubmit} bookId={id} />

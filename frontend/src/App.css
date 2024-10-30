@@ -1,147 +1,263 @@
-/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f5f5f5; /* Light background for the body */
-  color: #333333; /* Darker text for better contrast */
-  font-family: 'Roboto', sans-serif; /* Modern font */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-/* Heading Styles */
-h1 {
-  color: #222222; /* Darker color for headings */
-  margin-bottom: 20px; /* Space below heading */
-  font-size: 2.8rem; /* Larger font size for headings */
-  font-weight: bold; /* Bold font weight for emphasis */
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5); /* Subtle shadow for depth */
-}
-
-/* Dashboard Styles */
 .dashboard {
-  padding: 30px; /* Increased padding around the dashboard */
-  text-align: center; /* Center align text in the dashboard */
+  background-color: #ffa500;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Card Styles */
-.card {
-  background-color: #ffffff; /* White card background */
-  border: none; /* Remove border */
-  border-radius: 10px; /* Slightly more rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+.dashboard h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-/* Card Hover Effect */
-.card:hover {
-  transform: translateY(-8px); /* Lift card on hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
 }
 
-/* Button Styles */
-.btn {
-  border-radius: 5px; /* Rounded corners */
-  background-color: #007bff; /* Bootstrap primary color */
-  border: none; /* Remove default border */
-  padding: 12px 24px; /* Increase padding */
-  font-size: 1.1rem; /* Button font size */
-  color: #ffffff; /* White text for buttons */
+.book-card-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.book-card {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s; /* Add a hover effect */
+}
+
+.book-card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.book-card h2 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-card p {
+  font-size: 0.8rem;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions button {
+  width: 20%;
+  padding: 0.5rem 0; 
+  border-radius: 5px; 
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+/* Edit button styles */
+.edit-button {
+  background-color: #007bff; 
+}
+
+.edit-button:hover {
+  background-color: #0056b3; 
+  transform: translateY(-2px); 
+}
+
+/* Delete button styles */
+.delete-button {
+  background-color: #dc3545; 
+}
+
+.delete-button:hover {
+  background-color: #c82333; 
+  transform: translateY(-2px); 
+}
+
+.add-book-button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.add-book-button:hover {
+  background-color: #444;
+}
+
+.book-details-title {
+  background-color: #ffa500; 
+  padding: 10px; 
+  border-radius: 5px; 
+}
+
+.book-details {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 60vh;
+  background-color: #ffa500; 
+  position: relative; /* Allow positioning of the button */
+}
+
+.book-details-card {
+  background-color: #000; 
+  color: #fff; 
+  padding: 30px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+  max-width: 400px; 
+  width: 100%; 
+  text-align: left; 
+  position: relative; /* Positioning for absolute children */
+}
+
+.book-details-card h2 {
+  font-size: 1.5rem; 
+  margin-bottom: 10px; 
+}
+
+.book-details-card p {
+  font-size: 1rem; 
+  color: #ccc; 
+}
+
+.back-button {
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  background-color: #333; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 0.625rem 1.25rem; /* Padding for the button */
+  border-radius: 10px; /* Rounded corners */
+  border: none; /* No border */
   cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+  transition: background-color 0.3s; /* Transition for hover effect */
 }
 
-/* Button Hover Effect */
-.btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+.back-button:hover {
+  background-color: #444; /* Darker color on hover */
 }
 
-/* Input and Form Styles */
-input,
-textarea {
-  background-color: #ffffff; /* White background for inputs */
-  color: #333333; /* Dark text for inputs */
-  border: 1px solid #ccc; /* Light border color */
-  border-radius: 4px; /* Rounded corners */
-  padding: 12px; /* Increased padding inside inputs */
-  width: 100%; /* Full width */
-  margin-bottom: 15px; /* Space between inputs */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for border color */
+.card-body {
+  background-color: #ffa500;
 }
 
-/* Input Focus Effect */
-input:focus,
-textarea:focus {
-  border-color: #007bff; /* Change border color on focus */
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+.book-form-card {
+  background-color: #000; 
+  color: #fff; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+  max-width: 400px; 
+  margin: auto; 
+  text-align: left; 
 }
 
-/* List Styles */
-ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
+.form-input {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+  border: none; 
+  border-radius: 5px; 
+  background-color: #fff; 
+  color: #000; 
 }
 
-li {
-  background-color: #ffffff; /* White background for list items */
-  margin: 15px 0; /* Space between items */
-  padding: 15px; /* Padding inside items */
-  border-radius: 8px; /* Rounded corners */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+.submit-button {
+  background-color: #ff4500; 
+  color: #fff; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 1rem; 
 }
 
-/* List Item Hover Effect */
-li:hover {
-  background-color: #f0f0f0; /* Light gray background on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
+.submit-button:hover {
+  background-color: #ff6347; 
 }
 
-/* Global Links */
-a {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition for color change */
+.error-message {
+  color: red; 
+  margin-bottom: 10px; 
 }
 
-a:hover {
-  color: #0056b3; /* Darker shade on hover */
-  text-decoration: underline; /* Underline on hover */
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5); /* Subtle shadow on hover for depth */
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #ffffff; /* White background for footer */
-  color: #333333; /* Dark text for footer */
-  padding: 20px; /* Padding inside footer */
-  text-align: center; /* Center align text in footer */
-  position: fixed; /* Fixed footer */
-  bottom: 0; /* Align to bottom */
-  width: 100%; /* Full width */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Light shadow above footer */
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.2rem; /* Adjust heading size for smaller screens */
+  .dashboard h1 {
+    font-size: 1.25rem;
   }
 
+  .book-card {
+    padding: 2rem; 
+  }
+
+  .book-card h2 {
+    font-size: 0.9rem; 
+  }
+
+  .book-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .add-book-button {
+    font-size: 0.9rem; 
+  }
+
+  .book-details-card {
+    max-width: 90%; 
+  }
+
+  .book-form-card {
+    max-width: 90%; 
+  }
+}
+
+@media (max-width: 480px) {
   .dashboard {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 15px; 
   }
 
-  .btn {
-    padding: 10px 15px; /* Adjust button padding for smaller screens */
-    font-size: 1rem; /* Adjust button font size */
+  .book-card {
+    padding: 1.5rem; 
   }
 
-  input,
-  textarea {
-    padding: 10px; /* Adjust input padding */
+  .submit-button {
+    padding: 0.625rem; 
+    font-size: 0.9rem; 
   }
 
-  li {
-    margin: 10px 0; /* Adjust margin for list items */
+  .form-input {
+    padding: 8px; 
   }
 }

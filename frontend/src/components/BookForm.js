@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { createBook, updateBook, fetchBookById } from '../api'; // Import the API functions
 
+
 function BookForm({ onSubmit, bookId = null }) {
     const [book, setBook] = useState({ title: '', author: '', published_year: '', genre: '', description: '' });
     const [error, setError] = useState(null);
@@ -43,15 +44,17 @@ function BookForm({ onSubmit, bookId = null }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <input name="title" value={book.title} onChange={handleChange} placeholder="Title" required />
-            <input name="author" value={book.author} onChange={handleChange} placeholder="Author" required />
-            <input name="published_year" value={book.published_year} onChange={handleChange} placeholder="Year" />
-            <input name="genre" value={book.genre} onChange={handleChange} placeholder="Genre" />
-            <textarea name="description" value={book.description} onChange={handleChange} placeholder="Description" />
-            <button type="submit">{bookId ? 'Update' : 'Add'} Book</button>
-        </form>
+        <div className="book-form-card">
+            <form onSubmit={handleSubmit}>
+                {error && <p className="error-message">{error}</p>}
+                <input className="form-input" name="title" value={book.title} onChange={handleChange} placeholder="Title" required />
+                <input className="form-input" name="author" value={book.author} onChange={handleChange} placeholder="Author" required />
+                <input className="form-input" name="published_year" value={book.published_year} onChange={handleChange} placeholder="Year" />
+                <input className="form-input" name="genre" value={book.genre} onChange={handleChange} placeholder="Genre" />
+                <textarea className="form-input" name="description" value={book.description} onChange={handleChange} placeholder="Description" />
+                <button type="submit" className="submit-button">{bookId ? 'Update' : 'Add'} Book</button>
+            </form>
+        </div>
     );
 }
 
