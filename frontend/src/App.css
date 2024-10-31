@@ -12,12 +12,13 @@ body {
 .dashboard {
   background-color: #ffa500;
   border-radius: 20px;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
 }
 
 .dashboard h1 {
-  font-size: 1.5rem;
+  font-size: 3.0rem;
+  font: bold;
   margin-bottom: 20px;
 }
 
@@ -116,9 +117,14 @@ body {
 }
 
 .book-details-title {
+  font-size: 5.0rem;
   background-color: #ffa500; 
   padding: 10px; 
   border-radius: 5px; 
+}
+.mb-4.card-title.h5{
+  font-size: 2.0rem;
+  font-weight: bold;
 }
 
 .book-details {
@@ -127,7 +133,7 @@ body {
   align-items: center; 
   height: 60vh;
   background-color: #ffa500; 
-  position: relative; /* Allow positioning of the button */
+  position: relative; 
 }
 
 .book-details-card {
@@ -139,7 +145,7 @@ body {
   max-width: 400px; 
   width: 100%; 
   text-align: left; 
-  position: relative; /* Positioning for absolute children */
+  position: relative;
 }
 
 .book-details-card h2 {
@@ -153,20 +159,20 @@ body {
 }
 
 .back-button {
-  position: absolute; /* Position it absolutely */
-  top: 10px; /* Distance from the top */
-  left: 10px; /* Distance from the left */
-  background-color: #333; /* Button background color */
-  color: #fff; /* Button text color */
-  padding: 0.625rem 1.25rem; /* Padding for the button */
-  border-radius: 10px; /* Rounded corners */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  background-color: #333; 
+  color: #fff; 
+  padding: 0.625rem 1.25rem; 
+  border-radius: 10px;
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .back-button:hover {
-  background-color: #444; /* Darker color on hover */
+  background-color: #444; 
 }
 
 .card-body {

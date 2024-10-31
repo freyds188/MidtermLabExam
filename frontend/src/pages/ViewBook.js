@@ -7,7 +7,7 @@ function ViewBook() {
         <Container className="mt-4">
             <Card className="text-center">
                 <Card.Body>
-                    <div className="book-details-title"> {/* New div for title styling */}
+                    <div className="book-details-title">
                         <Card.Title className="mb-4">Book Details</Card.Title>
                     </div>
                     <BookDetails />
